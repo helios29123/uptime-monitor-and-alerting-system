@@ -1,0 +1,20 @@
+[
+  {
+    "id": "site-google",
+    "name": "Google Vietnam",
+    "url": "https://www.google.com.vn",
+    "timeout": 5.0
+  },
+  {
+    "id": "site-invalid",
+    "name": "Non Existent Domain Test",
+    "url": "https://domain-nay-chac-chan-khong-ton-tai-123456.com",
+    "timeout": 5.0
+  },
+  {
+    "id": "site-500-error",
+    "name": "HTTP 500 Test",
+    "url": "https://httpstat.us/500",
+    "timeout": 5.0
+  }
+]
