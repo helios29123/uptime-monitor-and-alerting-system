@@ -3,7 +3,7 @@ import httpx
 from dotenv import load_dotenv
 
 # Tìm và nạp các biến môi trường từ file src/.env
-load_dotenv("src/.env")
+load_dotenv()
 
 WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 
