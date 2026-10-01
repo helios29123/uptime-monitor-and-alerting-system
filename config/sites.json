@@ -1,20 +1,44 @@
 [
   {
-    "id": "site-google",
-    "name": "Google Vietnam",
-    "url": "https://www.google.com.vn",
+    "id": "ai-chatgpt",
+    "name": "ChatGPT (OpenAI)",
+    "url": "https://chatgpt.com",
     "timeout": 5.0
   },
   {
-    "id": "site-invalid",
-    "name": "Non Existent Domain Test",
-    "url": "https://domain-nay-chac-chan-khong-ton-tai-123456.com",
+    "id": "ai-claude",
+    "name": "Claude (Anthropic)",
+    "url": "https://claude.ai",
     "timeout": 5.0
   },
   {
-    "id": "site-500-error",
-    "name": "HTTP 500 Test",
-    "url": "https://httpstat.us/500",
+    "id": "ai-gemini",
+    "name": "Google Gemini",
+    "url": "https://gemini.google.com",
+    "timeout": 5.0
+  },
+  {
+    "id": "social-facebook",
+    "name": "Facebook",
+    "url": "https://www.facebook.com",
+    "timeout": 5.0
+  },
+  {
+    "id": "social-x",
+    "name": "X (Twitter)",
+    "url": "https://x.com",
+    "timeout": 5.0
+  },
+  {
+    "id": "social-instagram",
+    "name": "Instagram",
+    "url": "https://www.instagram.com",
+    "timeout": 5.0
+  },
+  {
+    "id": "video-youtube",
+    "name": "YouTube",
+    "url": "https://www.youtube.com",
     "timeout": 5.0
   }
 ]
