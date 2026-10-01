@@ -8,7 +8,7 @@
   {
     "id": "ai-claude",
     "name": "Claude (Anthropic)",
-    "url": "https://claude.ai",
+    "url": "https://status.anthropic.com",
     "timeout": 5.0
   },
   {

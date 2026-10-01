@@ -1,5 +1,5 @@
 import time
-import httpx
+from curl_cffi import requests as httpx
 from typing import Any, Dict
 
 
@@ -22,9 +22,7 @@ def probe_url(target: Dict[str, Any]) -> Dict[str, Any]:
 
     start_time = time.perf_counter()
     try:
-        timeout_config = httpx.Timeout(timeout_sec, connect=timeout_sec)
-
-        with httpx.Client(timeout=timeout_config, follow_redirects=True) as client:
+        with httpx.Session(impersonate="chrome110", timeout=timeout_sec) as client:
             response = client.get(url)
             latency = (time.perf_counter() - start_time) * 1000
 
@@ -39,16 +37,7 @@ def probe_url(target: Dict[str, Any]) -> Dict[str, Any]:
                 result["error_type"] = f"HTTP_{response.status_code}"
                 result["message"] = f"Received status code {response.status_code}"
 
-    except httpx.ConnectTimeout:
-        result["error_type"] = "TIMEOUT"
-        result["message"] = f"Connection timed out after {timeout_sec}s"
-    except httpx.ReadTimeout:
-        result["error_type"] = "READ_TIMEOUT"
-        result["message"] = f"Server did not respond within {timeout_sec}s"
-    except httpx.ConnectError:
-        result["error_type"] = "CONNECTION_REFUSED"
-        result["message"] = "Cannot resolve domain or connection was refused"
-    except httpx.HTTPError as exc:
+    except httpx.errors.RequestsError as exc:
         result["error_type"] = "NETWORK_ERROR"
         result["message"] = str(exc)
     except Exception as exc:
