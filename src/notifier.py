@@ -32,10 +32,9 @@ def send_discord_alert(title: str, message: str, is_up: bool):
 
 if __name__ == "__main__":
     print("--- KIỂM TRA LUỒNG THÔNG BÁO ---")
-    send_alert("Google Vietnam", "https://www.google.com.vn", True)
-    send_alert(
-        "Dịch vụ Nội bộ",
-        "https://api.internal",
+    send_discord_alert("Google Vietnam UP", "Dịch vụ đã hoạt động bình thường. Độ trễ: 12ms", True)
+    send_discord_alert(
+        "SẬP HỆ THỐNG: Dịch vụ Nội bộ",
+        "**Lỗi:** CONNECTION_REFUSED\n**Chi tiết:** Không thể kết nối tới https://api.internal",
         False,
-        "CONNECTION_REFUSED - Không thể kết nối",
     )
